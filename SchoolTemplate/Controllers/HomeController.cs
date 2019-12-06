@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using SchoolTemplate.Models;
@@ -14,13 +10,12 @@ namespace SchoolTemplate.Controllers
   {
     public IActionResult Index()
     {
-      string connectionString =
-        "Server=145.103.105.227;Port=3306;Database=fastfood;Uid=lgg;Pwd=LifeUniverseEverything;SslMode=Required";
-      
+      string connectionString = "Server=172.16.160.21;Port=3306;Database=;Uid=;Pwd=;";
+   
       using (MySqlConnection conn = new MySqlConnection(connectionString))
       {
         conn.Open();
-        MySqlCommand cmd = new MySqlCommand("select * from products", conn);
+        MySqlCommand cmd = new MySqlCommand("select * from product", conn);
 
         using (var reader = cmd.ExecuteReader())
         {
