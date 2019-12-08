@@ -10,24 +10,24 @@ namespace SchoolTemplate.Controllers
   {
     public IActionResult Index()
     {
-      string connectionString = "Server=172.16.160.21;Port=3306;Database=;Uid=;Pwd=;";
+      //string connectionString = "Server=172.16.160.21;Port=3306;Database=;Uid=;Pwd=;";
    
-      using (MySqlConnection conn = new MySqlConnection(connectionString))
-      {
-        conn.Open();
-        MySqlCommand cmd = new MySqlCommand("select * from product", conn);
+      //using (MySqlConnection conn = new MySqlConnection(connectionString))
+      //{
+      //  conn.Open();
+      //  MySqlCommand cmd = new MySqlCommand("select * from product", conn);
 
-        using (var reader = cmd.ExecuteReader())
-        {
-          while (reader.Read())
-          {
+      //  using (var reader = cmd.ExecuteReader())
+      //  {
+      //    while (reader.Read())
+      //    {
 
-            int Id = Convert.ToInt32(reader["Id"]);
-            string Name = reader["Naam"].ToString();
-          }
-        }
+      //      int Id = Convert.ToInt32(reader["Id"]);
+      //      string Name = reader["Naam"].ToString();
+      //    }
+      //  }
 
-      }
+      //}
 
       return View();
     }
