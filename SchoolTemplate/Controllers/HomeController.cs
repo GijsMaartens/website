@@ -26,15 +26,15 @@ namespace SchoolTemplate.Controllers
     {
       List<Product> products = new List<Product>();
 
-      using (MySqlConnection conn = new MySqlConnection(connectionString))
-      {
-        conn.Open();
-        MySqlCommand cmd = new MySqlCommand("select * from product", conn);
+      //using (MySqlConnection conn = new MySqlConnection(connectionString))
+      //{
+      //  conn.Open();
+      //  MySqlCommand cmd = new MySqlCommand("select * from product", conn);
 
-        using (var reader = cmd.ExecuteReader())
-        {
-          while (reader.Read())
-          {
+      //  using (var reader = cmd.ExecuteReader())
+      //  {
+      //    while (reader.Read())
+      //    {
             Product p = new Product
             {
               Id = Convert.ToInt32(reader["Id"]),
@@ -47,7 +47,7 @@ namespace SchoolTemplate.Controllers
             products.Add(p);
           }
         }
-      }
+      //}
 
       return products;
     }
