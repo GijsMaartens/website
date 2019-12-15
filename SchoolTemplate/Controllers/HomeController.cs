@@ -1,17 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
+using SchoolTemplate.Database;
 using SchoolTemplate.Models;
 
 namespace SchoolTemplate.Controllers
 {
   public class HomeController : Controller
   {
+    // zorg ervoor dat je hier je gebruikersnaam (leerlingnummer) en wachtwoord invult
+    string connectionString = "Server=172.16.160.21;Port=3306;Database=;Uid=;Pwd=;";
+
     public IActionResult Index()
     {
-      string connectionString = "Server=172.16.160.21;Port=3306;Database=;Uid=;Pwd=;";
-   
+      List<Product> products = new List<Product>();
+      // uncomment deze regel om producten uit je database toe te voegen
+      // products = GetProducts();
+
+      return View(products);
+    }
+
+    private List<Product> GetProducts()
+    {
+      List<Product> products = new List<Product>();
+
       using (MySqlConnection conn = new MySqlConnection(connectionString))
       {
         conn.Open();
@@ -21,15 +35,21 @@ namespace SchoolTemplate.Controllers
         {
           while (reader.Read())
           {
-
-            int Id = Convert.ToInt32(reader["Id"]);
-            string Name = reader["Naam"].ToString();
+            Product p = new Product
+            {
+              Id = Convert.ToInt32(reader["Id"]),
+              Naam = reader["Naam"].ToString(),
+              Calorieen = float.Parse(reader["calorieen"].ToString()),
+              Formaat = reader["Naam"].ToString(),
+              Gewicht = Convert.ToInt32(reader["Naam"].ToString()),
+              Prijs = Decimal.Parse(reader["Naam"].ToString())
+            };
+            products.Add(p);
           }
         }
-
       }
 
-      return View();
+      return products;
     }
 
     public IActionResult Privacy()
