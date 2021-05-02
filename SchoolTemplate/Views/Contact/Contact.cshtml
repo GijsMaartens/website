@@ -1,0 +1,44 @@
+﻿@using SchoolTemplate.Database;
+
+@{
+  ViewData["Title"] = "Contact";
+}
+
+<div class="text-center">
+    <h1>Contact</h1>
+</div>
+
+<div class="container">
+    <form action="" method="post">
+        <div class="row g-3">
+            <div class="col-12">
+                <label class="form-label">Email</label>
+                <input class="form-control" placeholder="Email" type="email" title="Email" required autofocus>
+            </div>
+            <br />
+            <div class="col-12">
+                <input class="form-control" placeholder="Naam" type="text" title="Naam" required>
+            </div>
+            <br />
+            <div class="col col-12">
+                <input class="form-control" placeholder="Geboortedatum (DD-MM-YYYY)" type="datetime" title="Geboortedatum" required>
+            </div>
+            <br />
+            <div class="col col-12">
+                <input class="form-control" placeholder="Postcode" type="text" title="Postcode" required>
+            </div>
+            <br />
+            <div class="col col-12">
+                <input class="form-control" placeholder="Huisnummer" type="text" title="Huisnummer" required>
+            </div>
+            <br />
+            <div class="col col-12">
+                <textarea class="form-control" placeholder="Uw bericht" type="text" title="Bericht" required></textarea>
+            </div>
+            <br />
+            <div class="col col-12">
+                <button class="form-control btn btn-outline-info btn-lg" name="Verstuur" type="submit">Verstuur</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,20 +1,14 @@
 ﻿@using SchoolTemplate.Database;
-@model List<Product>
+@model List<Evenement>
 @{
-  ViewData["Title"] = "Home Page";
+  ViewData["Title"] = "Home";
 }
 
-<h1>Hoi</h1>
+<h1>Home</h1>
 
 <div class="text-center">
   <h1 class="display-4">Welcome</h1>
   <ul>
-    @foreach (Product p in Model)
-    {
-      <li>
-        @p.Naam @p.Prijs euro
-      </li>
-    }
   </ul>
   <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
