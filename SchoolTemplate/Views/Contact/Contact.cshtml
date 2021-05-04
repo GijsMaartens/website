@@ -12,30 +12,61 @@
     <form action="" method="post">
         <div class="row g-3">
             <div class="col-12">
-                <label class="form-label">Email</label>
-                <input class="form-control" placeholder="Email" type="email" title="Email" required autofocus>
+                <div class="card">
+                    <div class="card-header">
+                        Persoonlijke Informatie
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <label class="form-label">Naam</label>
+                                <input class="form-control" placeholder="Naam" type="text" title="Naam" required autofocus>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Geboortedatum</label>
+                                <input class="form-control" placeholder="Geboortedatum (DD-MM-YYYY)" type="datetime" title="Geboortedatum" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br />
             <div class="col-12">
-                <input class="form-control" placeholder="Naam" type="text" title="Naam" required>
+                <div class="card">
+                    <div class="card-header">
+                        Contact Informatie
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input class="form-control" placeholder="Email" type="email" title="Email" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Postcode</label>
+                                <input class="form-control" placeholder="Postcode" type="text" title="Postcode" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Huisnummer</label>
+                                <input class="form-control" placeholder="Huisnummer" type="text" title="Huisnummer" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br />
-            <div class="col col-12">
-                <input class="form-control" placeholder="Geboortedatum (DD-MM-YYYY)" type="datetime" title="Geboortedatum" required>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Bericht
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-2">
+                            <div class="col-12">
+                                <textarea class="form-control" placeholder="Uw bericht" type="text" title="Bericht" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br />
-            <div class="col col-12">
-                <input class="form-control" placeholder="Postcode" type="text" title="Postcode" required>
-            </div>
-            <br />
-            <div class="col col-12">
-                <input class="form-control" placeholder="Huisnummer" type="text" title="Huisnummer" required>
-            </div>
-            <br />
-            <div class="col col-12">
-                <textarea class="form-control" placeholder="Uw bericht" type="text" title="Bericht" required></textarea>
-            </div>
-            <br />
             <div class="col col-12">
                 <button class="form-control btn btn-outline-info btn-lg" name="Verstuur" type="submit">Verstuur</button>
             </div>
